@@ -1,46 +1,50 @@
 source 'https://rubygems.org'
+#ruby-gemset=railstutorial_rails_4_0
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+group :development do
+	gem 'guard'
+	gem 'guard-minitest'
+	gem 'guard-bundler', require: false
+end
 
-# Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3'
-	gem 'rspec-rails', '2.13.1'
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'guard-rspec', require: false
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :test do
-	gem 'selenium-webdriver', '2.35.1'
-	gem 'capybara', '2.1.0'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+
+  # OS X: раскомментируйте эти строки.
+  # gem 'growl', '1.0.3'
+
+  # Linux: раскомментируйте эти строки.
+  # gem 'libnotify', '0.8.0'
+
+  # Windows: раскомментируйте эти строки.
+  # gem 'rb-notifu', '0.0.4'
+  # gem 'win32console', '1.3.2'
+  # gem 'wdm', '0.1.0'
 end
 
-gem 'sass-rails', '4.0.1'
-gem 'uglifier', '2.1.1'
-gem 'coffee-rails', '4.0.1'
-gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.1.1'
-gem 'jbuilder', '1.0.2'
-gem 'test-unit'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', '0.3.20', require: false
 end
 
-#for Heroku production
 group :production do
-	gem 'pg', '0.15.1'
-	gem 'rails_12factor', '0.0.2'
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
