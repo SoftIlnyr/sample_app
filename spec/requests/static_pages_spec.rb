@@ -13,7 +13,7 @@ describe "Static pages" do
 
 	describe "Home pages" do
 		before {visit root_path}
-		let(:heading) { 'Sample App'}
+		let(:heading) { 'SoftIlnyr App'}
 		let(:page_title) { '' }
 
 		it_should_behave_like "all static pages"
